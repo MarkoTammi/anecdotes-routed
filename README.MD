@@ -37,6 +37,14 @@ Toistaiseksi ei testaus toiminnallisuutta
 ### Edistyminen
 
 7.1: routed anecdotes, step1 - git branch part7-01  
-ToDo  
+Asennettu React router  
+npm install --save react-router-dom  
+
+Siivottu app.js jakamalla komponentteihin  
+
+Menu-komponentissa olevia linkkejä klikkailemalla saadaan  
+säädeltyä näytettävää näkymää  
+
+
 
 
