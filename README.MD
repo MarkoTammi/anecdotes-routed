@@ -45,6 +45,12 @@ Siivottu app.js jakamalla komponentteihin
 Menu-komponentissa olevia linkkejä klikkailemalla saadaan  
 säädeltyä näytettävää näkymää  
 
+7.2: routed anecdotes, step2  
+Yksittäisen anekdotin näyttö url /anecdote/<id>  
+
+7.3: routed anecdotes, step3  
+ToDo
+
 
 
 

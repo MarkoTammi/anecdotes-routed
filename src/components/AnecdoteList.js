@@ -1,15 +1,30 @@
 
 
+// Component to render all anecdotes as a list
+// menu navigation "/"
+
 import React from 'react'
+import {
+  BrowserRouter as Router,
+  Switch, Route, Link
+} from "react-router-dom"
 
-const AnecdoteList = ({ anecdotes }) => (
-    <div>
-      <h2>Anecdotes</h2>
-      <ul>
-        {anecdotes.map(anecdote => <li key={anecdote.id} >{anecdote.content}</li>)}
-      </ul>
-    </div>
-  )
 
+const AnecdoteList = ({ anecdotes }) => {
+
+    console.log('AnecdoteList', anecdotes)
+
+    return (
+        <div>
+            <h2>Anecdotes</h2>
+            <ul>
+                {anecdotes.map(anecdote => 
+                    <li key={anecdote.id}> 
+                        <Link to={`/anecdotes/${anecdote.id}`}>{anecdote.content}</Link>
+                    </li>)}
+            </ul>
+        </div>
+    )
+}
 
 export default AnecdoteList
