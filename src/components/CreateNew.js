@@ -2,6 +2,10 @@
 
 
 import React, { useState } from 'react'
+import {
+  BrowserRouter as Router,
+  Switch, Route, Link, useHistory
+} from "react-router-dom"
 
 
 
@@ -10,6 +14,7 @@ const CreateNew = (props) => {
     const [author, setAuthor] = useState('')
     const [info, setInfo] = useState('')
   
+    const history = useHistory();
   
     const handleSubmit = (e) => {
       e.preventDefault()
@@ -20,10 +25,19 @@ const CreateNew = (props) => {
         info,
         votes: 0
       })
+      console.log('content', content)
+      props.setNotification(content)
+      // Reroute to '/'-AnecdoteList when new anecdote have been created
+      history.push('/')
+      // Clear notification msg after timeout and stay AnecdoteList component
+      setTimeout( () => {
+        props.setNotification('')}, 10000)
+
     }
   
     return (
       <div>
+
         <h2>create a new anecdote</h2>
         <form onSubmit={handleSubmit}>
           <div>

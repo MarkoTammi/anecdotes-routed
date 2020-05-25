@@ -12,6 +12,7 @@ import About from './components/About'
 import Footer from './components/Footer'
 import CreateNew from './components/CreateNew'
 import Anecdote from './components/Anecdote'
+import Notification from './components/Notification'
 
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
 
   
   const addNew = (anecdote) => {
+    console.log('addNew -anecdote', anecdote)
     anecdote.id = (Math.random() * 10000).toFixed(0)
     setAnecdotes(anecdotes.concat(anecdote))
   }
@@ -70,9 +72,10 @@ const App = () => {
             <About />
           </Route>
           <Route path="/create">
-            <CreateNew addNew={addNew} />
+            <CreateNew addNew={addNew} setNotification={setNotification}/>
           </Route>
           <Route path="/">
+            {notification !== '' && <Notification notification={notification} setNotification={setNotification}/>}
             <AnecdoteList anecdotes={anecdotes} />
           </Route>
         </Switch>
