@@ -51,8 +51,16 @@ Yksittäisen anekdotin näyttö url /anecdote/<id>
 7.3: routed anecdotes, step3  - git branch part7-03  
 Uuden anekdotin luonnin jälkeen reroute '/'-sivulle  
 
-7.4: anekdoottisovellus ja hookit step1 - git branch part7-04
+7.4: anekdoottisovellus ja hookit step1 - git branch part7-04  
 Custom hook useField lomakkeen käsittelyyn  
+
+7.5: anekdoottisovellus ja hookit step2  
+Lisätty lomakkeeseen nappi, joka mahdollistaa syötekenttien tyhjentämisen.  
+Lisätty reset() useField hookiin  
+
+7.6: anekdoottisovellus ja hookit step3 - git branch part7-06  
+Korjattu tehtävässä 7.5 syntynyt vika  
+input kentän reset='reset' atribuutilla    
 
 
 

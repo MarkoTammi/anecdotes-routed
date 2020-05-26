@@ -1,20 +1,15 @@
 
 
 
-import React, { useState } from 'react'
+import React, { } from 'react'
 import { useHistory } from "react-router-dom"
 
 // Custom hook for form 
 import { useField } from '../hooks/index'
 
 
-
 const CreateNew = (props) => {
-    // Was used before exec. 7.4
-    //const [content, setContent] = useState('')
-    //const [author, setAuthor] = useState('')
-    //const [info, setInfo] = useState('')
-  
+
     // Hook for rerouting
     const history = useHistory();
 
@@ -23,9 +18,10 @@ const CreateNew = (props) => {
     const author = useField('text')
     const info = useField('text')
 
-    const handleSubmit = (e) => {
+
+    const handleCreate = (e) => {
       e.preventDefault()
-      console.log('handleSubmit')
+      //console.log('handleSubmitCreate')
       props.addNew({
         content: content.value ,
         author: author.value,
@@ -42,61 +38,37 @@ const CreateNew = (props) => {
 
     }
   
+    const handleReset = (e) => {
+      e.preventDefault()
+      //console.log('handleReset')
+      content.reset()
+      author.reset()
+      info.reset()
+      history.push('/create')
+    }
+
     return (
       <div>
 
         <h2>create a new anecdote</h2>
 
         {/* Hook solution 1 with spread attributes */}
-        <form onSubmit={handleSubmit}>
+        <form id='form' onSubmit={handleCreate}>
           <div>
             content
-            <input {...content}/>
+            <input {...content} reset='reset' />
           </div>
           <div>
             author
-            <input {...author} />
+            <input {...author} reset='reset' />
           </div>
           <div>
             url for more info
-            <input {...info} />
+            <input {...info} reset='reset'/>
           </div>
           <button>create</button>
+          <button onClick={handleReset}>reset</button>
         </form>
-
-        {/* Hook solution 2  */}
-{/*         <form onSubmit={handleSubmit}>
-          <div>
-            content
-            <input type={content.type} value={content.value} onChange={content.onChange} />
-          </div>
-          <div>
-            author
-            <input type={author.type} value={author.value} onChange={author.onChange} />
-          </div>
-          <div>
-            url for more info
-            <input type={info.type} value={info.value} onChange={info.onChange} />
-          </div>
-          <button>create</button>
-        </form> */}
-
-{/* Was used before exec. 7.4 custom hook */}
-{/*         <form onSubmit={handleSubmit}>
-          <div>
-            content
-            <input name='content' value={content} onChange={(e) => setContent(e.target.value)} />
-          </div>
-          <div>
-            author
-            <input name='author' value={author} onChange={(e) => setAuthor(e.target.value)} />
-          </div>
-          <div>
-            url for more info
-            <input name='info' value={info} onChange={(e)=> setInfo(e.target.value)} />
-          </div>
-          <button>create</button>
-        </form> */}
 
       </div>
     )
