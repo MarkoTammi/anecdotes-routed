@@ -48,9 +48,11 @@ säädeltyä näytettävää näkymää
 7.2: routed anecdotes, step2  
 Yksittäisen anekdotin näyttö url /anecdote/<id>  
 
-7.3: routed anecdotes, step3  - git branch part7-01  
+7.3: routed anecdotes, step3  - git branch part7-03  
 Uuden anekdotin luonnin jälkeen reroute '/'-sivulle  
 
+7.4: anekdoottisovellus ja hookit step1 - git branch part7-04
+Custom hook useField lomakkeen käsittelyyn  
 
 
 

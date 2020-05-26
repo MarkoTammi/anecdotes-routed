@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import {
   BrowserRouter as Router,
-  Switch, Route, Link
+  Switch, Route
 } from "react-router-dom"
 
 import Menu from './components/Menu'
@@ -37,7 +37,6 @@ const App = () => {
 
   
   const addNew = (anecdote) => {
-    console.log('addNew -anecdote', anecdote)
     anecdote.id = (Math.random() * 10000).toFixed(0)
     setAnecdotes(anecdotes.concat(anecdote))
   }

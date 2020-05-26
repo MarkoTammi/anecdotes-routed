@@ -5,9 +5,7 @@
 
 import React from 'react'
 
-
 const Notification = (props) => {
-    console.log('Notification component')
 
     const style = {
         border: 'solid',
